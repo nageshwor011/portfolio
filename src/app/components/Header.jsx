@@ -14,7 +14,7 @@ function Header() {
             href="/"
             className="font-bold text-xl text-gray-900 dark:text-white"
           >
-            DevPortfolio
+            Shah Dev
           </Link>
         </div>
 
