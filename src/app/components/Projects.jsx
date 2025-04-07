@@ -1,26 +1,30 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Github, Linkedin, Mail, ExternalLink, Menu, X } from "lucide-react";
+import { Github, ExternalLink } from "lucide-react";
+import cura from "@/assets/cura.png";
 export default function Projects() {
   const projects = [
     {
       title: "E-commerce Platform",
       description:
-        "A full-featured e-commerce site built with React, Next.js, and a headless CMS. Includes product filtering, cart functionality, and payment integration.",
+        "A full-featured e-commerce site built with React, and a headless CMS. Includes product filtering, searching, cart functionality, and payment integration.",
       image: "/placeholder.svg?height=300&width=500",
-      tags: ["React", "Next.js", "Tailwind CSS", "Stripe"],
-      liveUrl: "#",
+      tags: ["React", "Tailwind CSS", "Stripe"],
+      liveUrl: "https://feelingz.nl/",
       githubUrl: "#",
+      imageUrl: "/images/feeling.png",
     },
     {
-      title: "Task Management App",
+      title: "Hospital Management System",
       description:
-        "A drag-and-drop task management application with user authentication, task categories, and deadline notifications.",
+        "Developed responsive UI for Cura Health, enabling telemedicine, online appointments, lab test booking, and patient records. Ensured smooth user experience with real-time notifications across web and mobile platforms",
       image: "/placeholder.svg?height=300&width=500",
-      tags: ["React", "Firebase", "Redux", "Styled Components"],
-      liveUrl: "#",
+      tags: ["React", "Node js", "Tailwind CSS", "Paypal"],
+      liveUrl: "https://www.curahealth.org/",
       githubUrl: "#",
+      imageUrl: cura,
     },
+
     {
       title: "Weather Dashboard",
       description:
@@ -29,13 +33,14 @@ export default function Projects() {
       tags: ["React", "OpenWeather API", "Chart.js", "Geolocation API"],
       liveUrl: "#",
       githubUrl: "#",
+      imageUrl: "/images/feeling.png",
     },
   ];
 
   return (
     <section
       id="projects"
-      className="bg-gray-100 dark:bg-gray-900 py-16 md:py-24"
+      className="bg-gray-100 dark:bg-gray-900 py-16 md:py-24 "
     >
       <div className="container mx-auto px-4 space-y-6 md:space-y-12">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white">
@@ -45,11 +50,11 @@ export default function Projects() {
           {projects.map((project) => (
             <div
               key={project.title}
-              className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm overflow-hidden flex flex-col h-full"
+              className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm overflow-hidden flex flex-col h-full hover:scale-110 transition duration-300 ease-in-out hover:z-10"
             >
               <div className="relative h-48">
                 <Image
-                  src={project.image || "/placeholder.svg"}
+                  src={project.imageUrl}
                   alt={project.title}
                   fill
                   className="object-cover"
@@ -83,7 +88,7 @@ export default function Projects() {
                   className="inline-flex h-9 items-center justify-center rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-1 text-sm font-medium text-gray-700 dark:text-gray-300 shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
                 >
                   <ExternalLink className="h-4 w-4 mr-2" />
-                  Live Demo
+                  Live Project
                 </Link>
                 <Link
                   href={project.githubUrl}

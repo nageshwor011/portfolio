@@ -24,3 +24,7 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+:hover.skillShadow {
+  box-shadow: 0px 0px 5px rgb(202, 202, 202);
+}

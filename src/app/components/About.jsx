@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
+import aboutPic from "@/assets/aboutPic.jpg";
 export default function AboutSection() {
   return (
     <section id="about" className="bg-gray-100 dark:bg-gray-900 py-16 md:py-24">
@@ -11,8 +11,9 @@ export default function AboutSection() {
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
             <Image
-              src="/placeholder.svg?height=600&width=600"
+              src={aboutPic}
               alt="Working on laptop"
+              style={{ width: "600px", height: "600px" }}
               width={600}
               height={600}
               className="rounded-lg"

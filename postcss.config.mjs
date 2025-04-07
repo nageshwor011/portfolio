@@ -57,6 +57,7 @@ const config = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      skillShadow: " box-shadow: 0px 0px 3px rgb(202, 202, 202);",
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

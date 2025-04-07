@@ -1,32 +1,35 @@
 function Skills() {
   const skills = [
     {
-      category: "Frontend",
+      category: "Programming Language",
+      items: ["HTML", "CSS", "JavaScript (ES6+)", "TypeScript"],
+    },
+    {
+      category: "Framework & Library",
       items: [
         "React.js",
         "Next.js",
-        "JavaScript (ES6+)",
-        "TypeScript",
-        "HTML5",
-        "CSS3",
+        "Node js",
+        "Express js",
         "Tailwind CSS",
+        "Bootstrap 5",
+        ,
+        " RTK query",
+        " & ",
+        "react-redux ecosystem",
       ],
     },
     {
-      category: "State Management",
-      items: ["Redux", "Context API", "React Query"],
+      category: "Database",
+      items: ["Mysql", "Mongo db", "Firestore & Firebase db"],
     },
     {
-      category: "Tools & Others",
-      items: [
-        "Git",
-        "GitHub",
-        "npm/yarn",
-        "Webpack",
-        "Vite",
-        "Jest",
-        "React Testing Library",
-      ],
+      category: "Rest API",
+      items: ["Build & Consume"],
+    },
+    {
+      category: "Version Control",
+      items: ["Git & Git hub"],
     },
   ];
 
@@ -42,7 +45,7 @@ function Skills() {
         {skills.map((skillGroup) => (
           <div
             key={skillGroup.category}
-            className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm overflow-hidden"
+            className="bg-white dark:bg-gray-800 rounded-lg border skillShadow border-gray-200 dark:border-gray-700 shadow-sm overflow-hidden"
           >
             <div className="p-6 border-b border-gray-200 dark:border-gray-700">
               <h3 className="text-lg font-medium text-gray-900 dark:text-white">
