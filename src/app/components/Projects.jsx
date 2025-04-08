@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Github, ExternalLink } from "lucide-react";
 import cura from "@/assets/cura.png";
+import programiz from "@/assets/programiz.png";
+
 export default function Projects() {
   const projects = [
     {
@@ -11,7 +13,6 @@ export default function Projects() {
       image: "/placeholder.svg?height=300&width=500",
       tags: ["React", "Tailwind CSS", "Stripe"],
       liveUrl: "https://feelingz.nl/",
-      githubUrl: "#",
       imageUrl: "/images/feeling.png",
     },
     {
@@ -19,21 +20,19 @@ export default function Projects() {
       description:
         "Developed responsive UI for Cura Health, enabling telemedicine, online appointments, lab test booking, and patient records. Ensured smooth user experience with real-time notifications across web and mobile platforms",
       image: "/placeholder.svg?height=300&width=500",
-      tags: ["React", "Node js", "Tailwind CSS", "Paypal"],
+      tags: ["React", "Node js", "Tailwind CSS", "Paypal", "Firebase"],
       liveUrl: "https://www.curahealth.org/",
-      githubUrl: "#",
       imageUrl: cura,
     },
 
     {
-      title: "Weather Dashboard",
+      title: "Online Code Compiler",
       description:
-        "A weather application that displays current conditions and forecasts based on location. Features include saved locations and interactive maps.",
+        "Worked on an interactive online code compiler for Programiz PRO, enabling hands-on learning with real-time output, guided projects, coding challenges, and AI mentorship—designed to help users overcome coding fear and build confidence through practical experience.",
       image: "/placeholder.svg?height=300&width=500",
-      tags: ["React", "OpenWeather API", "Chart.js", "Geolocation API"],
-      liveUrl: "#",
-      githubUrl: "#",
-      imageUrl: "/images/feeling.png",
+      tags: ["React", "Story book", "Chart.js", "Styled component"],
+      liveUrl: "https://www.programiz.com/",
+      imageUrl: programiz,
     },
   ];
 
@@ -90,7 +89,7 @@ export default function Projects() {
                   <ExternalLink className="h-4 w-4 mr-2" />
                   Live Project
                 </Link>
-                <Link
+                {/* <Link
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -98,7 +97,7 @@ export default function Projects() {
                 >
                   <Github className="h-4 w-4 mr-2" />
                   Code
-                </Link>
+                </Link> */}
               </div>
             </div>
           ))}
