@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import aboutPic from "@/assets/aboutPic.jpg";
-// import resume from "@/assets/resume/React_Developer_Nageshwor_Shah.pdf";
 
 export default function AboutSection() {
   return (

@@ -20,7 +20,7 @@ export default function Contact() {
             <div className="flex items-center gap-3">
               <Mail className="h-5 w-5 text-blue-600 dark:text-blue-400" />
               <Link
-                href="mailto:alex@example.com"
+                href="mailto:nageshwor011@gmail.com"
                 className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
               >
                 nageshwor011@gmail.com

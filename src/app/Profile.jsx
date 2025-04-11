@@ -1,9 +1,10 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import profile from "@/assets/profile.jpg";
 export default function Profile() {
   return (
-    <section className="container mx-auto px-4 py-24 md:py-32 flex flex-col md:flex-row items-center gap-8">
+    <section className="container mx-auto px-4 py-24 md:py-32 flex  flex-col-reverse md:flex-row items-center gap-8 animate-slidein300 ">
       <div className="flex-1 space-y-4">
         <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white">
           Hi, I'm{" "}
@@ -31,7 +32,7 @@ export default function Profile() {
       <div className="flex-1 flex justify-center">
         <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-blue-600 dark:border-blue-400">
           <Image
-            src="/placeholder.svg?height=400&width=400"
+            src={profile}
             alt="Developer portrait"
             fill
             className="object-cover"
