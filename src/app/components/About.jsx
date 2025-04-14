@@ -1,7 +1,9 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import aboutPic from "@/assets/aboutPic.jpg";
-
+import { motion } from "motion/react";
+import { useState } from "react";
 export default function AboutSection() {
   return (
     <section id="about" className="bg-gray-100 dark:bg-gray-900 py-16 md:py-24">
@@ -10,7 +12,10 @@ export default function AboutSection() {
           About Me
         </h2>
         <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div>
+          <motion.div
+            whileInView={{ y: [-200, 0], opacity: [0.7, 1] }}
+            transition={{ duration: 1 }}
+          >
             <Image
               src={aboutPic}
               alt="Working on laptop"
@@ -19,8 +24,13 @@ export default function AboutSection() {
               height={600}
               className="rounded-lg"
             />
-          </div>
-          <div className="space-y-4">
+          </motion.div>
+          <motion.div
+            className="space-y-4"
+            initial={{ opacity: 0 }}
+            whileInView={{ y: [-200, 0], opacity: [0.7, 1] }}
+            transition={{ duration: 1 }}
+          >
             <p className="text-lg text-gray-700 dark:text-gray-300">
               I'm a passionate React developer with 3 years of professional
               experience building modern web applications. I specialize in
@@ -52,7 +62,7 @@ export default function AboutSection() {
                 Download Resume
               </Link>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

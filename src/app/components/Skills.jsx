@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "motion/react";
 function Skills() {
   const skills = [
     {
@@ -41,10 +43,16 @@ function Skills() {
       <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white">
         My Skills
       </h2>
+      {/* <motion.div className="w-[100px] h-[100px] bg-amber-500" animate={{}}>
+        Hello
+      </motion.div> */}
       <div className="grid md:grid-cols-3 gap-8">
         {skills.map((skillGroup) => (
-          <div
+          <motion.div
             key={skillGroup.category}
+            initial={{ opacity: 0.4 }}
+            whileInView={{ y: [-200, 0], opacity: [0.7, 1] }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
             className="bg-white dark:bg-gray-800 rounded-lg border skillShadow border-gray-200 dark:border-gray-700 shadow-sm overflow-hidden"
           >
             <div className="p-6 border-b border-gray-200 dark:border-gray-700">
@@ -64,7 +72,7 @@ function Skills() {
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
