@@ -85,7 +85,7 @@ export default function Footer() {
             </h3>
             <div className="space-y-3">
               <a
-                href="mailto:nageshwor21@gmail.com"
+                href="mailto:nageshwor011@gmail.com"
                 className="text-sm text-gray-600 hover:text-blue-600 flex items-center gap-2 transition-colors"
               >
                 <Mail className="h-4 w-4 text-gray-500 flex-shrink-0" />
