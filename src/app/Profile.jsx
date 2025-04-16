@@ -2,7 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import profile from "@/assets/profile.jpg";
+import profile from "@/assets/profile.png";
 import { motion } from "motion/react";
 
 export default function Profile() {
@@ -34,26 +34,26 @@ export default function Profile() {
           <Link
             href="#contact"
             className="inline-flex h-10 items-center justify-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
-            whileTap={{ scale: 0.9 }}
+            whiletap={{ scale: 0.9 }}
           >
             Get in touch
           </Link>
           <motion.a
             href="#projects"
             className="inline-flex h-10 items-center justify-center rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 shadow-sm hover:bg-gray-50 dark:hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
-            whileTap={{ scale: 0.9 }}
+            whiletap={{ scale: 0.9 }}
           >
             View my work
           </motion.a>
         </div>
       </div>
       <div className="flex-1 flex justify-center">
-        <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-blue-600 dark:border-blue-400">
+        <div className="relative bg-white w-72 h-72 md:w-96 md:h-96  rounded-full overflow-hidden border-4 border-blue-600 dark:border-blue-400">
           <Image
             src={profile}
-            alt="Developer portrait"
+            alt="Developer portrait "
             fill
-            className="object-cover"
+            className=" object-scale-down"
             priority
           />
         </div>
