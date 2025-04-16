@@ -89,7 +89,7 @@ export default function Footer() {
                 className="text-sm text-gray-600 hover:text-blue-600 flex items-center gap-2 transition-colors"
               >
                 <Mail className="h-4 w-4 text-gray-500 flex-shrink-0" />
-                <span className="truncate">nageshwor21@gmail.com</span>
+                <span className="truncate">nageshwor011@gmail.com</span>
               </a>
               <a
                 href="https://linkedin.com/in/nageshwor"
