@@ -6,7 +6,7 @@ import profile from "@/assets/profile.png";
 import { motion } from "motion/react";
 
 export default function Profile() {
-  const title = "React Node js Developer";
+  const title = "Full Stack Engineer";
   const titleArray = title.split("");
   function Typewrite() {
     return (

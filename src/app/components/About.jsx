@@ -32,7 +32,7 @@ export default function AboutSection() {
             transition={{ duration: 1 }}
           >
             <p className="text-lg text-gray-700 dark:text-gray-300">
-              I'm a passionate React developer with 3 years of professional
+              I'm a passionate Full stack developer with 3 years of professional
               experience building modern web applications. I specialize in
               creating responsive, user-friendly interfaces with a focus on
               performance and accessibility.
@@ -54,10 +54,9 @@ export default function AboutSection() {
             <div className="pt-4">
               <Link
                 href={"/resume/React_Developer_Nageshwor_Shah.pdf"}
-                // href={"/images/feeling.png"}
-                // target="_blank"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-10 items-center justify-center rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 shadow-sm hover:bg-gray-50 dark:hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
+                className="inline-flex bg-blue-600 text-white h-10 items-center justify-center rounded-md border border-gray-300 dark:border-gray-700  dark:bg-gray-950 px-4 py-2 text-sm font-medium hover:bg-blue-700 dark:text-gray-300 shadow-sm  dark:hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
               >
                 Download Resume
               </Link>
