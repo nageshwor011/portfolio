@@ -5,10 +5,10 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full   sm:py-12 ">
+    <footer className="w-full px-4 sm:py-12  mt-[390px] sm:mt-[250px] md:mt-7 ">
       <div className="container pb-8 mx-auto px-4 gap-x-6 md:px-6 bg-gray-100 dark:bg-gray-900">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 pt-3 md:gap-10">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 pt-3 md:gap-10 ">
           {/* About Column */}
           <div className="space-y-4 ">
             <h3 className="text-base font-semibold text-gray-900">Nageshwor</h3>
