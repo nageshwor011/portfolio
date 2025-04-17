@@ -92,7 +92,7 @@ export default function Footer() {
                 <span className="truncate">nageshwor011@gmail.com</span>
               </a>
               <a
-                href="https://linkedin.com/in/nageshwor"
+                href="https://www.linkedin.com/in/nageshwor-shah-9a21b21b1"
                 className="text-sm text-gray-600 hover:text-blue-600 flex items-center gap-2 transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -101,13 +101,13 @@ export default function Footer() {
                 <span className="truncate">linkedin.com/in/nageshwor</span>
               </a>
               <a
-                href="https://github.com/nageshwor01"
+                href="https://github.com/nageshwor011"
                 className="text-sm text-gray-600 hover:text-blue-600 flex items-center gap-2 transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Github className="h-4 w-4 text-gray-500 flex-shrink-0" />
-                <span className="truncate">github.com/nageshwor01</span>
+                <span className="truncate">github.com/nageshwor011</span>
               </a>
             </div>
           </div>
