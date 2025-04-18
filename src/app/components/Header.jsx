@@ -1,9 +1,8 @@
 "use client";
-// import { Github, Linkedin, Mail, Menu } from "lucide-react";
-import { Github, Linkedin, Mail, ExternalLink, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
-function Header() {
+function Header({ aboutRef, contactRef, skillsRef, projectRef }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -34,24 +33,36 @@ function Header() {
         <nav className="hidden md:flex gap-6">
           <Link
             href="#about"
-            className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+            onClick={() => {
+              aboutRef.current?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="text-sm font-medium cursor-pointer text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
           >
             About
           </Link>
           <Link
             href="#skills"
+            onClick={() => {
+              skillsRef.current?.scrollIntoView({ behavior: "smooth" });
+            }}
             className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
           >
             Skills
           </Link>
           <Link
             href="#projects"
+            onClick={() => {
+              projectRef.current?.scrollIntoView({ behavior: "smooth" });
+            }}
             className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
           >
             Projects
           </Link>
           <Link
             href="#contact"
+            onClick={() => {
+              contactRef.current?.scrollIntoView({ behavior: "smooth" });
+            }}
             className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
           >
             Contact
@@ -65,28 +76,40 @@ function Header() {
               <Link
                 href="#about"
                 className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  aboutRef.current?.scrollIntoView({ behavior: "smooth" });
+                }}
               >
                 About
               </Link>
               <Link
                 href="#skills"
                 className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  skillsRef.current?.scrollIntoView({ behavior: "smooth" });
+                }}
               >
                 Skills
               </Link>
               <Link
                 href="#projects"
                 className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  projectRef.current?.scrollIntoView({ behavior: "smooth" });
+                }}
               >
                 Projects
               </Link>
               <Link
                 href="#contact"
                 className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  contactRef.current?.scrollIntoView({ behavior: "smooth" });
+                }}
               >
                 Contact
               </Link>

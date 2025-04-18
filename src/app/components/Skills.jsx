@@ -1,6 +1,28 @@
 "use client";
 import { motion } from "motion/react";
-function Skills() {
+import { useEffect, useState } from "react";
+function Skills({ skillsRef }) {
+  const [animateFromBottom, setAnimateFromBottom] = useState(true);
+  const [previousScroll, setPreviousScroll] = useState(0);
+
+  useEffect(() => {
+    function onScroll() {
+      const currentPosition = window.pageYOffset; // or use document.documentElement.scrollTop;
+
+      if (currentPosition > previousScroll) {
+        // downscroll code
+        setAnimateFromBottom(true);
+      } else {
+        // upscroll code
+        setAnimateFromBottom(false);
+      }
+      setPreviousScroll(currentPosition <= 0 ? 0 : currentPosition);
+    }
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [previousScroll]);
+
   const skills = [
     {
       category: "Programming Language",
@@ -15,9 +37,7 @@ function Skills() {
         "Express js",
         "Tailwind CSS",
         "Bootstrap 5",
-        ,
         " RTK query",
-        " & ",
         "react-redux ecosystem",
       ],
     },
@@ -39,19 +59,21 @@ function Skills() {
     <section
       id="skills"
       className="container mx-auto px-4 py-16 md:py-24 space-y-6 md:space-y-12"
+      ref={skillsRef}
     >
       <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white">
         My Skills
       </h2>
-      {/* <motion.div className="w-[100px] h-[100px] bg-amber-500" animate={{}}>
-        Hello
-      </motion.div> */}
+
       <div className="grid md:grid-cols-3 gap-8">
         {skills.map((skillGroup) => (
           <motion.div
             key={skillGroup.category}
             initial={{ opacity: 0.4 }}
-            whileInView={{ y: [-200, 0], opacity: [0.7, 1] }}
+            whileInView={{
+              y: animateFromBottom ? [100, 0] : [-100, 0],
+              opacity: [0, 0.5, 0.6, 1],
+            }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="bg-white dark:bg-gray-800 rounded-lg border skillShadow border-gray-200 dark:border-gray-700 shadow-sm overflow-hidden"
           >

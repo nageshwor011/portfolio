@@ -4,7 +4,7 @@ import { Github, ExternalLink } from "lucide-react";
 import cura from "@/assets/cura.png";
 import programiz from "@/assets/programiz.png";
 
-export default function Projects() {
+export default function Projects({ projectRef }) {
   const projects = [
     {
       title: "E-commerce Platform",
@@ -39,6 +39,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
+      ref={projectRef}
       className="bg-gray-100 dark:bg-gray-900 py-16 md:py-24 "
     >
       <div className="container mx-auto px-4 space-y-6 md:space-y-12">

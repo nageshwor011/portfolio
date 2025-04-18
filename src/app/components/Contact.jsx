@@ -1,9 +1,10 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
-export default function Contact() {
+export default function Contact({ contactRef }) {
   return (
     <section
       id="contact"
+      ref={contactRef}
       className="container mx-auto px-4 py-16 md:py-24 space-y-6 md:space-y-12"
     >
       <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white">

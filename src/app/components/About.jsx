@@ -3,22 +3,50 @@ import Image from "next/image";
 import Link from "next/link";
 import aboutPic from "@/assets/aboutPic.jpg";
 import { motion } from "motion/react";
-import { useState } from "react";
-export default function AboutSection() {
+import { useEffect, useState } from "react";
+export default function AboutSection({ aboutRef }) {
+  const [animateFromBottom, setAnimateFromBottom] = useState(true);
+  const [previousScroll, setPreviousScroll] = useState(0);
+
+  useEffect(() => {
+    function onScroll() {
+      let currentPosition = window.pageYOffset; // or use document.documentElement.scrollTop;
+
+      if (currentPosition > previousScroll) {
+        // downscroll code
+        setAnimateFromBottom(true);
+      } else {
+        // upscroll code
+        setAnimateFromBottom(false);
+      }
+      setPreviousScroll(currentPosition <= 0 ? 0 : currentPosition);
+    }
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [previousScroll]);
+
   return (
-    <section id="about" className="bg-gray-100 dark:bg-gray-900 py-16 md:py-24">
+    <section
+      ref={aboutRef}
+      id="about"
+      className="bg-gray-100 dark:bg-gray-900 py-16 md:py-24"
+    >
       <div className="container mx-auto px-4 space-y-6 md:space-y-12">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white">
           About Me
         </h2>
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <motion.div
-            whileInView={{ y: [-200, 0], opacity: [0.7, 1] }}
-            transition={{ duration: 1 }}
+            whileInView={{
+              y: animateFromBottom ? [100, 0] : [-100, 0],
+              opacity: [0, 0.5, 0.6, 1],
+            }}
+            transition={{ duration: 0.5 }}
           >
             <Image
               src={aboutPic}
-              alt="Working on laptop"
+              alt="sitting in a grassbar"
               style={{ width: "600px", height: "600px" }}
               width={600}
               height={600}
@@ -28,8 +56,11 @@ export default function AboutSection() {
           <motion.div
             className="space-y-4"
             initial={{ opacity: 0 }}
-            whileInView={{ y: [-200, 0], opacity: [0.7, 1] }}
-            transition={{ duration: 1 }}
+            whileInView={{
+              y: animateFromBottom ? [100, 0] : [-100, 0],
+              opacity: [0, 0.5, 0.6, 1],
+            }}
+            transition={{ duration: 0.5 }}
           >
             <p className="text-lg text-gray-700 dark:text-gray-300">
               I'm a passionate Full stack developer with 3 years of professional
