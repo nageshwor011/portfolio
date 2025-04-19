@@ -23,7 +23,7 @@ export default function Home() {
         projectRef={projectRef}
       />
       <main>
-        <Profile />
+        <Profile contactRef={contactRef} projectRef={projectRef} />
         <AboutSection aboutRef={aboutRef} />
         <Skills skillsRef={skillsRef} />
         <Projects projectRef={projectRef} />
