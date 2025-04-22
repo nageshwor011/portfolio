@@ -13,9 +13,9 @@ export default function Footer() {
           <div className="space-y-4 ">
             <h3 className="text-base font-semibold text-gray-900">Nageshwor</h3>
             <p className="text-sm text-gray-600 leading-relaxed max-w-xs">
-              React Node.js Developer focused on creating responsive,
-              user-friendly interfaces with emphasis on performance and
-              accessibility.
+              Front-end Developer specialize in React focused on creating
+              responsive, user-friendly interfaces with emphasis on performance
+              and accessibility.
             </p>
 
             {/* Social Links */}
