@@ -13,7 +13,7 @@ function Header({ aboutRef, contactRef, skillsRef, projectRef }) {
             href="/"
             className="font-bold text-xl text-gray-900 dark:text-white"
           >
-            Shah Dev
+            Web Dev
           </Link>
         </div>
 

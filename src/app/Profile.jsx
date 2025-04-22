@@ -6,13 +6,19 @@ import profile from "@/assets/profile.png";
 import { motion } from "motion/react";
 
 export default function Profile({ contactRef, projectRef }) {
-  const title = "Full Stack Engineer";
+  const title =
+    "Full Stack software developer with 3 years of experience building modern web applications.";
   const titleArray = title.split("");
   function Typewrite() {
     return (
       <>
         {titleArray.map((item, i) => (
-          <span key={i}>{item}</span>
+          <>
+            <span className="relative">
+              <motion.span key={i + 1}>{item}</motion.span>
+              {/* <span className="w-9 h-9 bg-neutral-900 absolute "></span> */}
+            </span>
+          </>
         ))}
       </>
     );
@@ -25,10 +31,8 @@ export default function Profile({ contactRef, projectRef }) {
           <span className="text-blue-600 dark:text-blue-400">Nageshwor</span>
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400">
-          <span className="font-bold">
-            <Typewrite />{" "}
-          </span>{" "}
-          with 3 years of experience building modern web applications.
+          <Typewrite />
+          {/* with 3 years of experience building modern web applications. */}
         </p>
         <div className="flex gap-4">
           <motion.button
