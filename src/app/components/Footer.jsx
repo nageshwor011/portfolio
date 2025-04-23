@@ -20,34 +20,34 @@ export default function Footer() {
 
             {/* Social Links */}
             <div className="flex space-x-5 pt-2">
-              <a
+              <Link
                 href="https://github.com/nageshwor011"
                 className="text-gray-500 hover:text-blue-600 transition-colors"
                 aria-label="GitHub"
               >
                 <Github className="h-5 w-5" />
-              </a>
-              <a
+              </Link>
+              <Link
                 href="https://www.linkedin.com/in/nageshwor-shah-9a21b21b1/"
                 className="text-gray-500 hover:text-blue-600 transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
-              </a>
-              <a
+              </Link>
+              <Link
                 href="https://twitter.com"
                 className="text-gray-500 hover:text-blue-600 transition-colors"
                 aria-label="Twitter"
               >
                 <Twitter className="h-5 w-5" />
-              </a>
-              <a
+              </Link>
+              <Link
                 href="mailto:nageshwor011@gmail.com"
                 className="text-gray-500 hover:text-blue-600 transition-colors"
                 aria-label="Email"
               >
                 <Mail className="h-5 w-5" />
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -58,20 +58,20 @@ export default function Footer() {
             </h3>
             <nav className="flex flex-col space-y-2">
               <Link
-                href="#about"
-                className="text-sm text-gray-600 hover:text-blue-600 transition-colors"
+                href={"/#about"}
+                className="text-sm cursor-pointer text-gray-600 hover:text-blue-600 transition-colors"
               >
                 About
               </Link>
               <Link
-                href="#projects"
-                className="text-sm text-gray-600 hover:text-blue-600 transition-colors"
+                href={"/#projects"}
+                className="text-sm cursor-pointer text-gray-600 hover:text-blue-600 transition-colors"
               >
                 Projects
               </Link>
               <Link
-                href="#skills"
-                className="text-sm text-gray-600 hover:text-blue-600 transition-colors"
+                href={"/#skills"}
+                className="text-sm cursor-pointer text-gray-600 hover:text-blue-600 transition-colors"
               >
                 Skill
               </Link>
@@ -84,14 +84,14 @@ export default function Footer() {
               Get In Touch
             </h3>
             <div className="space-y-3">
-              <a
+              <Link
                 href="mailto:nageshwor011@gmail.com"
                 className="text-sm text-gray-600 hover:text-blue-600 flex items-center gap-2 transition-colors"
               >
                 <Mail className="h-4 w-4 text-gray-500 flex-shrink-0" />
                 <span className="truncate">nageshwor011@gmail.com</span>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="https://www.linkedin.com/in/nageshwor-shah-9a21b21b1"
                 className="text-sm text-gray-600 hover:text-blue-600 flex items-center gap-2 transition-colors"
                 target="_blank"
@@ -99,8 +99,8 @@ export default function Footer() {
               >
                 <Linkedin className="h-4 w-4 text-gray-500 flex-shrink-0" />
                 <span className="truncate">linkedin.com/in/nageshwor</span>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="https://github.com/nageshwor011"
                 className="text-sm text-gray-600 hover:text-blue-600 flex items-center gap-2 transition-colors"
                 target="_blank"
@@ -108,7 +108,7 @@ export default function Footer() {
               >
                 <Github className="h-4 w-4 text-gray-500 flex-shrink-0" />
                 <span className="truncate">github.com/nageshwor011</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

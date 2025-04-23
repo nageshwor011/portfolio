@@ -31,88 +31,80 @@ function Header({ aboutRef, contactRef, skillsRef, projectRef }) {
 
         {/* Desktop navigation */}
         <nav className="hidden md:flex gap-6">
-          <Link
-            href="#about"
+          <button
             onClick={() => {
               aboutRef.current?.scrollIntoView({ behavior: "smooth" });
             }}
             className="text-sm font-medium cursor-pointer text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
           >
             About
-          </Link>
-          <Link
-            href="#skills"
+          </button>
+          <button
             onClick={() => {
               skillsRef.current?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+            className="text-sm  cursor-pointer font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
           >
             Skills
-          </Link>
-          <Link
-            href="#projects"
+          </button>
+          <button
             onClick={() => {
               projectRef.current?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+            className="text-sm cursor-pointer font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
           >
             Projects
-          </Link>
-          <Link
-            href="#contact"
+          </button>
+          <button
             onClick={() => {
               contactRef.current?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+            className="text-sm cursor-pointer font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
           >
             Contact
-          </Link>
+          </button>
         </nav>
 
         {/* Mobile navigation */}
         {isMenuOpen && (
           <div className="absolute top-16 left-0 right-0 bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800 md:hidden">
             <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
-              <Link
-                href="#about"
-                className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+              <button
+                className="text-sm cursor-pointer font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
                 onClick={() => {
                   setIsMenuOpen(false);
                   aboutRef.current?.scrollIntoView({ behavior: "smooth" });
                 }}
               >
                 About
-              </Link>
-              <Link
-                href="#skills"
-                className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+              </button>
+              <button
+                className="text-sm cursor-pointer font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
                 onClick={() => {
                   setIsMenuOpen(false);
                   skillsRef.current?.scrollIntoView({ behavior: "smooth" });
                 }}
               >
                 Skills
-              </Link>
-              <Link
-                href="#projects"
-                className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+              </button>
+              <button
+                className="text-sm cursor-pointer font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
                 onClick={() => {
                   setIsMenuOpen(false);
                   projectRef.current?.scrollIntoView({ behavior: "smooth" });
                 }}
               >
                 Projects
-              </Link>
-              <Link
-                href="#contact"
-                className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+              </button>
+              <button
+                className="text-sm cursor-pointer font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
                 onClick={() => {
                   setIsMenuOpen(false);
                   contactRef.current?.scrollIntoView({ behavior: "smooth" });
                 }}
               >
                 Contact
-              </Link>
+              </button>
             </div>
           </div>
         )}
