@@ -19,27 +19,24 @@ function Typewrite() {
   useEffect(() => {
     const control = setInterval(() => {
       setExampleIndex((prev) => (prev + 1) % example.length);
-      console.log("working ", exampleIndex);
     }, SWAP_DELAY_IN_MS);
     return () => clearInterval(control);
   }, []);
   return (
     <>
       {titleArray.map((item, i) => (
-        <>
-          <motion.span
-            key={i + 1}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: [0, 0.4, 0.7, 1] }}
-            transition={{
-              delay: i * 0.05,
-              duration: BOX_FADE_DURATION,
-              ease: "easeInOut",
-            }}
-          >
-            {item}
-          </motion.span>
-        </>
+        <motion.span
+          key={i + 1}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: [0, 0.4, 0.7, 1] }}
+          transition={{
+            delay: i * 0.05,
+            duration: BOX_FADE_DURATION,
+            ease: "easeInOut",
+          }}
+        >
+          {item}
+        </motion.span>
       ))}
     </>
   );

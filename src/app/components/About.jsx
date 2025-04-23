@@ -2,12 +2,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import aboutPic from "@/assets/aboutPic.jpg";
-import { motion } from "motion/react";
-import { useEffect, useState } from "react";
+import { motion, useInView } from "motion/react";
+import { useEffect, useRef, useState } from "react";
 export default function AboutSection({ aboutRef }) {
   const [animateFromBottom, setAnimateFromBottom] = useState(true);
   const [previousScroll, setPreviousScroll] = useState(0);
-
+  const picRef = useRef(null);
+  const textRef = useRef(null);
+  const isProfilePicInView = useInView(picRef, { once: false });
+  const isTextInView = useInView(textRef, { once: false });
+  const [positionScale, setPositionScale] = useState({
+    pic: [0, 0],
+    text: [0, 0],
+  });
   useEffect(() => {
     function onScroll() {
       let currentPosition = window.pageYOffset; // or use document.documentElement.scrollTop;
@@ -26,6 +33,38 @@ export default function AboutSection({ aboutRef }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, [previousScroll]);
 
+  const displayPic = () => {
+    if (isProfilePicInView & animateFromBottom) {
+      setPositionScale((prev) => ({ ...prev, pic: [100, 0] }));
+      return;
+    }
+    if (isProfilePicInView && !animateFromBottom) {
+      setPositionScale((prev) => ({ ...prev, pic: [-100, 0] }));
+      return;
+    }
+    if (!isProfilePicInView) {
+      setPositionScale((prev) => ({ ...prev, pic: 0 }));
+    }
+  };
+
+  const displayText = () => {
+    if (isTextInView & animateFromBottom) {
+      setPositionScale((prev) => ({ ...prev, text: [100, 0] }));
+      return;
+    }
+    if (isTextInView && !animateFromBottom) {
+      setPositionScale((prev) => ({ ...prev, text: [-100, 0] }));
+      return;
+    }
+    if (!isTextInView) {
+      setPositionScale((prev) => ({ ...prev, text: 0 }));
+    }
+  };
+  useEffect(() => {
+    displayPic();
+    displayText();
+  }, [isProfilePicInView, isTextInView]);
+
   return (
     <section
       ref={aboutRef}
@@ -38,8 +77,9 @@ export default function AboutSection({ aboutRef }) {
         </h2>
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <motion.div
-            whileInView={{
-              y: animateFromBottom ? [100, 0] : [-100, 0],
+            ref={picRef}
+            animate={{
+              y: positionScale.pic,
               opacity: [0, 0.5, 0.6, 1],
             }}
             transition={{ duration: 0.5 }}
@@ -56,8 +96,9 @@ export default function AboutSection({ aboutRef }) {
           <motion.div
             className="space-y-4"
             initial={{ opacity: 0 }}
-            whileInView={{
-              y: animateFromBottom ? [100, 0] : [-100, 0],
+            ref={textRef}
+            animate={{
+              y: positionScale.text,
               opacity: [0, 0.5, 0.6, 1],
             }}
             transition={{ duration: 0.5 }}
