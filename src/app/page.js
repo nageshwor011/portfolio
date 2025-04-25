@@ -4,7 +4,7 @@ import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Projects from "./components/Projects";
 import AboutSection from "./components/About";
-import Profile from "./Profile";
+import Profile from "./components/Profile";
 import Footer from "./components/Footer";
 import { useRef } from "react";
 
