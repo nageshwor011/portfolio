@@ -71,7 +71,7 @@ function Skills({ skillsRef }) {
             key={skillGroup.category}
             initial={{ opacity: 0.4 }}
             whileInView={{
-              y: animateFromBottom ? [100, 0] : [-100, 0],
+              y: animateFromBottom ? [100, 0] : [-50, 0],
               opacity: [0, 0.5, 0.6, 1],
             }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
