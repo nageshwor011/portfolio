@@ -1,9 +1,15 @@
 "use client";
-import { Menu, X } from "lucide-react";
+import { Menu, Moon, Sun, X } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 function Header({ aboutRef, contactRef, skillsRef, projectRef }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+   const { theme, setTheme } = useTheme();
+  const LIGHT = "light";
+  const Dark = "dark";
+  const SYSTEM = "system";
+  console.log("theme", theme);
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-gray-200 dark:border-gray-800 bg-white/95 dark:bg-gray-950/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-gray-950/60">
@@ -25,9 +31,42 @@ function Header({ aboutRef, contactRef, skillsRef, projectRef }) {
           {isMenuOpen ? (
             <X className="h-6 w-6" />
           ) : (
-            <Menu className="h-6 w-6" />
+            <>
+            <div className="flex gap-2 items-center">
+
+              <Menu className="h-6 w-6" />
+             <button
+            className="bg-white hover:bg-gray-100 text-gray-800 font-semibold  py-2 px-2 border border-gray-400 rounded-full shadow"
+            onClick={() =>
+              setTheme((prev) =>
+                prev == Dark || prev == SYSTEM ? LIGHT : Dark,
+              )
+            }
+          >
+            {theme === "light" ? (
+              <Moon className="text-blue-600" />
+            ) : (
+              <Sun className="text-blue-600" />
+            )}
+          </button>
+            </div>
+            </>
           )}
         </button>
+        {/* <button
+            className="bg-white hover:bg-gray-100 text-gray-800 font-semibold  py-2 px-2 border border-gray-400 rounded-full shadow"
+            onClick={() =>
+              setTheme((prev) =>
+                prev == Dark || prev == SYSTEM ? LIGHT : Dark,
+              )
+            }
+          >
+            {theme === "light" ? (
+              <Moon className="text-blue-600" />
+            ) : (
+              <Sun className="text-blue-600" />
+            )}
+          </button> */}
 
         {/* Desktop navigation */}
         <nav className="hidden md:flex gap-6">
@@ -62,6 +101,20 @@ function Header({ aboutRef, contactRef, skillsRef, projectRef }) {
             className="text-sm cursor-pointer font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
           >
             Contact
+          </button>
+             <button
+            className="bg-white hover:bg-gray-100 text-gray-800 font-semibold  py-2 px-2 border border-gray-400 rounded-full shadow"
+            onClick={() =>
+              setTheme((prev) =>
+                prev == Dark || prev == SYSTEM ? LIGHT : Dark,
+              )
+            }
+          >
+            {theme === "light" ? (
+              <Moon className="text-blue-600" />
+            ) : (
+              <Sun className="text-blue-600" />
+            )}
           </button>
         </nav>
 
@@ -105,6 +158,7 @@ function Header({ aboutRef, contactRef, skillsRef, projectRef }) {
               >
                 Contact
               </button>
+           
             </div>
           </div>
         )}
