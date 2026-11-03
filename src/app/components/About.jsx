@@ -125,7 +125,7 @@ export default function AboutSection({ aboutRef }) {
             </p>
             <div className="pt-4">
               <Link
-                href={"/resume/React_Developer_Nageshwor_Shah.pdf"}
+                href={"/resume/React_Next_Developer_Nageshwor_Shah.pdf"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex bg-blue-600 text-white h-10 items-center justify-center rounded-md border border-gray-300 dark:border-gray-700  dark:bg-gray-950 px-4 py-2 text-sm font-medium hover:bg-blue-700 dark:text-gray-300 shadow-sm  dark:hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
